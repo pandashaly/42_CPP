@@ -1,15 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 15:43:56 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/02 02:01:25 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/02 02:14:55 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PhoneBook.hpp"
 #include <iostream>
 #include <cctype>
 
@@ -24,7 +25,7 @@ PhoneBook::~PhoneBook(void)
 void	PhoneBook::addNew(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds)
 {
 		this->_contacts[this->_size].save(fn, ln, nn, pn, ds);
-		this->size++;
+		this->_size++;
 }
 
 void	PhoneBook::overwriteOld(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds)
@@ -38,7 +39,7 @@ void	PhoneBook::createCT(std::string fn, std::string ln, std::string nn, std::st
 	if (this->_size < 8)
 		addNew(fn, ln, nn, pn, ds);
 	else
-		overwriteOldaddNew(fn, ln, nn, pn, ds);
+		overwriteOld(fn, ln, nn, pn, ds);
 }
 
 int	PhoneBook::get_size(void)

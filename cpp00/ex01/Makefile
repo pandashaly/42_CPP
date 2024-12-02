@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/01 15:38:39 by ssottori          #+#    #+#              #
-#    Updated: 2024/12/02 00:40:15 by ssottori         ###   ########.fr        #
+#    Updated: 2024/12/02 02:03:43 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ IFLAGS = -I$(INC)
 
 # ================SRCS=================
 SRCS = main.cpp \
-		#phonebook.cpp \
-		contact.cpp \
+		PhoneBook.cpp \
+		Contact.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
