@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 15:50:43 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/01 16:01:47 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/02 23:50:31 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 
 int	main(int ac, char **av)
 {
-	int j;
-
 	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE NOISE *";
+		std::cout << "* LOUD AND UNBEARABLE NOISE *" << std::endl;
 	else
 	{
+		std::string str;
 		for (int i = 1; i < ac; i++)
 		{
-			j = 0;
-			while (av[i][j])
-				std::cout << (char) std::toupper(av[i][j++]);
+			for (int j = 0; av[i][j] != '\0'; j++)
+				str += std::toupper(av[i][j]);
+			if (i < ac - 1)
+				str += ' ';
 		}
+			std::cout << str << std::endl;
 	}
-	std::cout << std::endl;
 	return (0);
 }
 
