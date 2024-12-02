@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 01:51:50 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/02 02:00:25 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/02 18:08:59 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	Contact::save(std::string fn, std::string ln, std::string nn, std::string p
 
 void	Contact::print_short(int i)
 {
-	// "|   Index    | First Name | Last Name  |  Nickname  |"
 	std::cout << "| " << std::setw(10) << i + 1 << " | ";
 	if (this->_firstName.length() > 10)
 		std::cout << std::setw(10) << this->_firstName.substr(0, 9) + '.' << " | ";

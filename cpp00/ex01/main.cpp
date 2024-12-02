@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 21:26:55 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/02 02:12:27 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/02 20:39:43 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #define H4 "|                  Contact information              |\n"
 #define CLR "\e[1;1H\e[2J"
 
-void	take_input(std::string *input)
+void	validateInput(std::string *input)
 {
 	std::getline(std::cin, *input);
 	while(input->empty())
@@ -29,22 +29,49 @@ void	take_input(std::string *input)
 	}
 }
 
-void	add_prompt(PhoneBook &pb)
+bool	validNumber(const std::string &num)
+{
+	if (num.empty())
+		return false;
+	size_t start = 0;
+	for (size_t i = start; i < num.length(); ++i)
+	{
+		if (!isdigit(num[i]))
+			return false; // Invalid character found
+	}
+	return true;
+}
+
+void takeNumber(std::string &num)
+{
+	while (true)
+	{
+		std::getline(std::cin, num);
+		if (validNumber(num))
+			break;
+
+		std::cout << "Invalid phone number. Please try again. (Digits only)" << std::endl;
+		std::cout << "Phone Number: ";
+	}
+}
+
+
+void	add(PhoneBook &pb)
 {
 	std::string fn, ln, nn, pn, ds;
 	std::cout << CLR;
 	std::cout << H0 << H2 << H0;
 	std::cout << "Enter information for new contact:" << std::endl;
 	std::cout << "First Name: ";
-	take_input(&fn);
+	validateInput(&fn);
 	std::cout << "Last Name: ";
-	take_input(&ln);
+	validateInput(&ln);
 	std::cout << "Nickname: ";
-	take_input(&nn);
+	validateInput(&nn);
 	std::cout << "Phone Number: ";
-	take_input(&pn);
+	takeNumber(pn);
 	std::cout << "Darkest Secret: ";
-	take_input(&ds);
+	validateInput(&ds);
 	pb.createCT(fn, ln, nn, pn, ds);
 	return ;
 }
@@ -52,13 +79,13 @@ void	add_prompt(PhoneBook &pb)
 void	contact_info(PhoneBook &pb, int i)
 {
 	std::cout << CLR;
-	std::cout << H0 << H4 << H4;
+	std::cout << H0 << H4 << H0;
 	pb.print_deets(i);
 	std::cout << std::endl << "Press enter to continue..." << std::endl;
 	std::cin.get();
 }
 
-void	search_prompt(PhoneBook &pb)
+void	search(PhoneBook &pb)
 {
 	int			i;
 	std::string in;
@@ -100,12 +127,20 @@ int	main(void)
 		std::cout << "ADD, SEARCH or EXIT" << std::endl;
 		std::cout << "PhoneBook> ";
 		std::getline(std::cin, input);
+		//validateInput(&input);
+		// if (input.empty())
+		// {
+		// 	std::cout << "Invalid input. Please try one of the options above." << std::endl;
+		// 	continue;
+		// }
 		if (input == "ADD") 
-			add_prompt(pb);
+			add(pb);
 		else if (input == "SEARCH")
-			search_prompt(pb);
+			search(pb);
 		else if (input == "EXIT")
 			return (0);
+		else
+			std::cout << "Invalid command. Please enter ADD, SEARCH, or EXIT." << std::endl;
 		std::cout << "PhoneBook> ";
 	}
 }
