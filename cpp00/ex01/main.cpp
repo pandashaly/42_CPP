@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 21:26:55 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/03 17:55:35 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/03 18:09:53 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,43 +31,44 @@ void	validateInput(std::string *input)
 		}
 	while(input->empty())
 	{
-		std::cout << "Field cannot be empty. Please enter again:";
-		std::getline(std::cin, *input);
+		std::cout << "Field cannot be empty. Please enter again: ";
+		//std::getline(std::cin, *input);
+		validateInput(input);
 	}
 }
 
-bool	validNumber(const std::string &num)
-{
-	if (num.empty())
-		return false;
-	size_t start = 0;
-	for (size_t i = start; i < num.length(); ++i)
-	{
-		if (!isdigit(num[i]))
-			return false; // Invalid character found
-	}
-	return true;
-}
+// bool	validNumber(const std::string &num)
+// {
+// 	if (num.empty())
+// 		return false;
+// 	size_t start = 0;
+// 	for (size_t i = start; i < num.length(); ++i)
+// 	{
+// 		if (!isdigit(num[i]))
+// 			return false; // Invalid character found
+// 	}
+// 	return true;
+// }
 
-void takeNumber(std::string &num)
-{
-	while (true)
-	{
-		//std::getline(std::cin, num);
-		if (!std::getline(std::cin, num)) 
-		{
-			if (std::cin.eof()) {
-				std::cout << "\nEOF detected. Exiting...\n";
-				break;
-			}
-		}
-		if (validNumber(num))
-			break;
+// void takeNumber(std::string &num)
+// {
+// 	while (true)
+// 	{
+// 		//std::getline(std::cin, num);
+// 		if (!std::getline(std::cin, num)) 
+// 		{
+// 			if (std::cin.eof()) {
+// 				std::cout << "\nEOF detected. Exiting...\n";
+// 				break;
+// 			}
+// 		}
+// 		if (validNumber(num))
+// 			break;
 
-		std::cout << "Invalid phone number. Please try again. (Digits only)\n";
-		std::cout << "Phone Number: ";
-	}
-}
+// 		std::cout << "Invalid phone number. Please try again. (Digits only)\n";
+// 		std::cout << "Phone Number: ";
+// 	}
+// }
 
 
 void	add(PhoneBook &pb)
@@ -83,7 +84,7 @@ void	add(PhoneBook &pb)
 	std::cout << "Nickname: ";
 	validateInput(&nn);
 	std::cout << "Phone Number: ";
-	takeNumber(pn);
+	validateInput(&pn);
 	std::cout << "Darkest Secret: ";
 	validateInput(&ds);
 	pb.createCT(fn, ln, nn, pn, ds);
