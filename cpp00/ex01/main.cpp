@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 21:26:55 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/02 20:39:43 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/03 17:55:35 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,14 @@
 
 void	validateInput(std::string *input)
 {
-	std::getline(std::cin, *input);
+	//std::getline(std::cin, *input);
+	if (!std::getline(std::cin, *input)) 
+		{
+			if (std::cin.eof()) {
+				std::cout << "\nEOF detected. Exiting...\n";
+				exit(0);
+			}
+		}
 	while(input->empty())
 	{
 		std::cout << "Field cannot be empty. Please enter again:";
@@ -46,11 +53,18 @@ void takeNumber(std::string &num)
 {
 	while (true)
 	{
-		std::getline(std::cin, num);
+		//std::getline(std::cin, num);
+		if (!std::getline(std::cin, num)) 
+		{
+			if (std::cin.eof()) {
+				std::cout << "\nEOF detected. Exiting...\n";
+				break;
+			}
+		}
 		if (validNumber(num))
 			break;
 
-		std::cout << "Invalid phone number. Please try again. (Digits only)" << std::endl;
+		std::cout << "Invalid phone number. Please try again. (Digits only)\n";
 		std::cout << "Phone Number: ";
 	}
 }
@@ -61,7 +75,7 @@ void	add(PhoneBook &pb)
 	std::string fn, ln, nn, pn, ds;
 	std::cout << CLR;
 	std::cout << H0 << H2 << H0;
-	std::cout << "Enter information for new contact:" << std::endl;
+	std::cout << "Enter information for new contact: \n";
 	std::cout << "First Name: ";
 	validateInput(&fn);
 	std::cout << "Last Name: ";
@@ -102,7 +116,14 @@ void	search(PhoneBook &pb)
 	std::cout << "Enter contact index or EXIT:" << std::endl << "PhoneBook> ";
 	while (1)
 	{
-		std::getline(std::cin, in);
+		//std::getline(std::cin, in);
+		if (!std::getline(std::cin, in)) 
+		{
+			if (std::cin.eof()) {
+				std::cout << "\nEOF detected. Exiting...\n";
+				break;
+			}
+		}
 		if (in == "EXIT")
 			return ;
 		else if ((in.length() != 1) || !(in[0] >= 49 && in[0] <= 58))
@@ -126,7 +147,15 @@ int	main(void)
 		std::cout << "Enter one of the following instruction (ALL CAPS)." << std::endl;
 		std::cout << "ADD, SEARCH or EXIT" << std::endl;
 		std::cout << "PhoneBook> ";
-		std::getline(std::cin, input);
+
+		if (!std::getline(std::cin, input)) 
+		{
+			if (std::cin.eof()) {
+				std::cout << "\nEOF detected. Exiting...\n";
+				break;
+			}
+		}
+		//std::getline(std::cin, input);
 		//validateInput(&input);
 		// if (input.empty())
 		// {
