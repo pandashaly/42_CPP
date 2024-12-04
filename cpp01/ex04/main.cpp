@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 16:27:04 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/04 19:15:37 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/04 19:31:07 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@
 // filename and two strings, s1 and s2.
 // It will open the file <filename> and copies its content into a new file <filename>.replace, replacing every occurrence of s1 with s2.
 
-// std::string    openFile(std::ifstream file)
-// {
-// 	while()
-
-// }
+std::string    openFile(std::ifstream file)
+{
+	
+}
 
 // std::string     search_replace(std::string line, std::string s1)
 // {
