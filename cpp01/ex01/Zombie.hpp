@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/03 00:00:44 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/04 00:33:06 by ssottori         ###   ########.fr       */
+/*   Created: 2024/12/04 01:28:59 by ssottori          #+#    #+#             */
+/*   Updated: 2024/12/04 12:58:25 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-void	randomChump(std::string name)
+# include <iostream>
+# include <cctype>
+
+class Zombie
 {
-	Zombie randomChump(name);
-	randomChump.announce();
-}
+    public:
+    Zombie(void);
+    Zombie(std::string name);
+    ~Zombie(void);
+    void    announce(void);
+    void    set_name(std::string name);
+    
+    private:
+		std::string _name;
+};
 
-// void randomChump(std::string name) {
-//     Zombie zombie(name); // Create on the stack
-//     zombie.announce(); // Zombie announces itself
-// }
+Zombie *zombieHorde(int N, std::string name);
+
+#endif

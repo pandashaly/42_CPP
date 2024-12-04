@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 17:23:05 by ssottori          #+#    #+#              #
-#    Updated: 2024/12/03 17:24:22 by ssottori         ###   ########.fr        #
+#    Updated: 2024/12/04 13:00:44 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ IFLAGS = -I$(INC)
 
 # ================SRCS=================
 SRCS = main.cpp \
-		
+		Zombie.cpp \
+		zombieHorde.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
