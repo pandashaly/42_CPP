@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/12/04 19:31:37 by ssottori          #+#    #+#              #
-#    Updated: 2024/12/04 20:00:42 by ssottori         ###   ########.fr        #
+#    Created: 2024/12/04 20:01:09 by ssottori          #+#    #+#              #
+#    Updated: 2024/12/04 20:02:31 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NC=\033[0m
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-NAME = harl
+NAME = harlFilter
 
 INC = inc
 IFLAGS = -I$(INC)
@@ -36,19 +36,19 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 			$(CC) $(FLAGS) $(OBJS) $(IFLAGS) -o $(NAME)
-	@echo "[$(GREEN)HARL$(NC)] - $<"
+	@echo "[$(GREEN)HARLFILTER$(NC)] - $<"
 
 %.o: %.c
-	echo "[$(GREEN)HARL$(NC)] - $<"
+	echo "[$(GREEN)HARLFILTER$(NC)] - $<"
 	$(CC) $(FLAGS) $(IFLAGS) -c $< -o $@
 
 # ===============CLEAN==================
 clean:
-	@echo "[$(RED)HARL$(NC)] Cleaning object files..."
+	@echo "[$(RED)HARLFILTER$(NC)] Cleaning object files..."
 			@$(RM) $(OBJS)
 
 fclean: clean
-	@echo "[$(RED)HARL$(NC)] Cleaning executable file..."
+	@echo "[$(RED)HARLFILTER$(NC)] Cleaning executable file..."
 			@$(RM) $(NAME)
 
 re: fclean all
