@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 20:02:59 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/04 20:03:08 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/05 19:47:27 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Harl
 		~Harl(void);
 		void    complain(std::string level);
 	private:
-		void    debug();
-		void    info();
-		void    warning();
-		void    error();
+		void    _debug();
+		void    _info();
+		void    _warning();
+		void    _error();
 		
 };
 
