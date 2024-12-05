@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 20:02:59 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/05 20:15:11 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/05 21:28:13 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Harl
 	public:
 		Harl(void);
 		~Harl(void);
-		void    complain(std::string level, std::string filter);
+		void    complain(std::string level);
 	private:
 		void    _debug();
 		void    _info();
@@ -28,6 +28,6 @@ class Harl
 		
 };
 
-int	get_level(std::string level);
+//typedef void (Harl::*t_func) ( void );
 
 #endif
