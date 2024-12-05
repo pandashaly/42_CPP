@@ -6,11 +6,13 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:51:29 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/04 16:04:40 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:48:52 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 Weapon::Weapon(std::string _type) : _type(_type)
 {

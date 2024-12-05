@@ -6,11 +6,13 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 16:11:03 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/04 16:16:41 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/05 17:17:33 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 HumanB::HumanB(std::string name) : _name(name), weapon(NULL)
 {
@@ -33,7 +35,7 @@ void	HumanB::attack(void)
 	return ;
 }
 
-void	HumanB::setWeapon(Weapon& weapon)
+void	HumanB::setWeapon(Weapon &weapon)
 {
 	this->weapon = &weapon;
 	return ;

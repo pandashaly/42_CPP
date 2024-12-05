@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:41:54 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/04 16:21:08 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/05 17:09:09 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class HumanB
 		HumanB(std::string name);
 		~HumanB(void);
 		void	attack();
-		void	setWeapon(Weapon& weapon);
+		void	setWeapon(Weapon &weapon);
 	private:
 		std::string	_name;
 		Weapon		*weapon;

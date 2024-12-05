@@ -6,13 +6,14 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:36:24 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/04 16:17:46 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:49:12 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WEAPON_HPP
 # define WEAPON_HPP
 # include <iostream>
+# include <string>
 # include "HumanA.hpp"
 # include "HumanB.hpp"
 
