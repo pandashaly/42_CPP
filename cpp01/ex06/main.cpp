@@ -6,23 +6,21 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:09:57 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/05 19:52:56 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/12/05 20:12:02 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main (int argc, char **argv)
-{
-	std::string level;
-	Harl harl;
-	
-	if (argc != 2)
-	{
-		std::cout << "Error: Wrong number of args!\n";
-		return (0);
+int main( int ac, char **av ) {
+
+	if (ac != 2) {
+		return (std::cout << "Usage: ./harlFilter \"level\"\n", EXIT_FAILURE);
 	}
-	level = argv[1];
-	harl.complain(level);
-	return (0);
+	std::string input = av[1];
+	Harl        harl;
+
+	harl.complain(input);
+
+	return EXIT_SUCCESS;
 }
