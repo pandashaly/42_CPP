@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/07 02:26:53 by ssottori          #+#    #+#              #
-#    Updated: 2024/12/07 02:35:13 by ssottori         ###   ########.fr        #
+#    Updated: 2024/12/07 02:35:04 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NC=\033[0m
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 RM = rm -rf
-NAME = ex01
+NAME = ex02
 
 INC = inc
 IFLAGS = -I$(INC)
@@ -36,19 +36,19 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 			$(CC) $(FLAGS) $(OBJS) $(IFLAGS) -o $(NAME)
-	@echo "[$(GREEN)EX01$(NC)] - $<"
+	@echo "[$(GREEN)EX02$(NC)] - $<"
 
 %.o: %.c
-	echo "[$(GREEN)EX01$(NC)] - $<"
+	echo "[$(GREEN)EX02$(NC)] - $<"
 	$(CC) $(FLAGS) $(IFLAGS) -c $< -o $@
 
 # ===============CLEAN==================
 clean:
-	@echo "[$(RED)EX01$(NC)] Cleaning object files..."
+	@echo "[$(RED)EX02$(NC)] Cleaning object files..."
 			@$(RM) $(OBJS)
 
 fclean: clean
-	@echo "[$(RED)EX01$(NC)] Cleaning executable file..."
+	@echo "[$(RED)EX02$(NC)] Cleaning executable file..."
 			@$(RM) $(NAME)
 
 re: fclean all
