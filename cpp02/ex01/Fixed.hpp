@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 02:28:46 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/07 02:29:05 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/04/07 16:08:41 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,25 @@
 
 class Fixed
 {
-    public:
+	public:
+		Fixed();
+		Fixed(const int n);
+		Fixed(const float f);
+		Fixed(const Fixed& copy);
+		Fixed& operator=(const Fixed& copy);
+		~Fixed();
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
+		float toFloat(void) const;
+		int toInt(void) const;
+		
+	private:
+		int _rawBits;
+		static const int _fractionalBits;
+};
 
-    private:
-}
+std::ostream &operator<<(std::ostream &out, const Fixed &val);
+
+// <<insert >>extract
+
+#endif
