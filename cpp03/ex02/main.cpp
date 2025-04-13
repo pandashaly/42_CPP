@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 23:39:38 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/13 01:41:23 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/04/13 12:05:56 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,14 @@ int main()
 
 	r.guardGate();
 	a.beRepaired(2); //should fail, ALfred is still Dead
+	std::cout << "The duo do everything they can to heal Alfred, but its hopeless..." << std::endl;
 	r.beRepaired(10);
 	b.beRepaired(30);
 	b.highFivesGuys();
 
 	std::cout << std::endl;
-	std::cout << "Batman is filled with burning rage at Alfreds death...This ends now!" << std::endl;
-
+	std::cout << "Batman is filled with burning rage at Alfreds death..." << std::endl;
+	std::cout << "THIS ENDS NOW! 🔥" << std::endl;
 	r.attack(enemy);
 	b.attack(enemy);
 

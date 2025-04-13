@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:32:29 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/12 23:38:31 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/04/13 02:20:52 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (_energyPoints <= 0 || _hitPoints <= 0)
 	{
-		std::cout << "ClapTrap " << _name << " cannot attack, not enough energy or hit points!" << std::endl;
+		std::cout << "ClapTrap " << _name << " cannot attack, not enough energy or HP!" << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " damage!" << std::endl;
@@ -76,13 +76,13 @@ void	ClapTrap::takeDamage(unsigned int dmg)
 }
 void	ClapTrap::beRepaired(unsigned int heals)
 {
-	if (_energyPoints > 0 || _hitPoints > 0)
+	if (_energyPoints <= 0 || _hitPoints <= 0)
 	{
-		std::cout << "ClapTrap " << _name << " cannot heal. Not enough energy or hit points!" << std::endl;
+		std::cout << "ClapTrap " << _name << " cannot heal. Not enough energy or HP!" << std::endl;
 		return ;
 	}
 	_hitPoints += heals;
 	_energyPoints--;
-	std::cout << "ClapTrap " << _name << " heals for " << heals << "hit points!" << std::endl;
+	std::cout << "ClapTrap " << _name << " heals for " << heals << " HP!" << std::endl;
 }
 
