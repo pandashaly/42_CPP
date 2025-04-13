@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:25:54 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/12 20:12:36 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/04/12 23:39:48 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
-	private:
+	protected:
 		std::string _name;
 		int _hitPoints; //10
 		int _energyPoints; //10

@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 13:01:57 by ssottori          #+#    #+#              #
-#    Updated: 2025/04/11 13:03:49 by ssottori         ###   ########.fr        #
+#    Updated: 2025/04/12 17:19:12 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NC=\033[0m
 
 # ===============FLAGS=================
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 NAME = ex00
 

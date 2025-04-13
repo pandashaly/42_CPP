@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 13:07:38 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/13 00:57:17 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/04/13 01:10:23 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,16 @@ void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << this->_name << " is now in Gate Keeper mode! Must Protect Gotham!" << std::endl;
 }
-
 void ScavTrap::attack(const std::string& target)
 {
 	if (this->_hitPoints <= 0 || this->_energyPoints <= 0)
 	{
-		std::cout << "ScavTrap " << this->_name << " cannot attack, not enough energy or hit points!" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " cannot attack, not enough energy or HP!" << std::endl;
 		return;
 	}
 
-	std::cout << "ScavTrap " << this->_name << " attacks " << target
-			<< " using ULT, dealing " << this->_attackDamage << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " flips into battle, almost tripping and kicks " << target
+			<< " dealing " << this->_attackDamage << " damage!" << std::endl;
 	this->_energyPoints--;
 }
 

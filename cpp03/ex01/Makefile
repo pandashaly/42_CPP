@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 13:03:27 by ssottori          #+#    #+#              #
-#    Updated: 2025/04/11 13:03:46 by ssottori         ###   ########.fr        #
+#    Updated: 2025/04/13 00:27:23 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ IFLAGS = -I$(INC)
 
 # ================SRCS=================
 SRCS = main.cpp \
-		Claptrap.cpp \
+		ClapTrap.cpp \
 		ScavTrap.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
