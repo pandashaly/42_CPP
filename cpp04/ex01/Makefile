@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 13:03:27 by ssottori          #+#    #+#              #
-#    Updated: 2025/04/13 15:01:49 by ssottori         ###   ########.fr        #
+#    Updated: 2025/05/07 12:48:58 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,9 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+leaks:
+	valgrind --leak-check=full ./$(NAME)
 
 
 # # ==============COLORS=================

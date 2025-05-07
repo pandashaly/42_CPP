@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 12:35:22 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/13 21:05:02 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 00:18:49 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Dog : public Animal
 		Dog& operator=(const Dog& other);
 		virtual ~Dog();
 
+		Brain& gainBrain() const;
 		void makeSound() const;
 };
 

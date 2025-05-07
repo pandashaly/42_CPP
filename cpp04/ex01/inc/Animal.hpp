@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 12:29:49 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/13 14:21:15 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 00:25:02 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ANIMAL_HPP
 
 # include <iostream>
+
+class Brain;
 
 class Animal
 {
@@ -26,7 +28,8 @@ class Animal
 
 		virtual void makeSound() const;
 		std::string getType() const;
-
+		virtual Brain& gainBrain() const = 0;
+		
 	protected:
 		std::string _type;
 

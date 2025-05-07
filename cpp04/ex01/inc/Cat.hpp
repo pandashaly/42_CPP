@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 12:35:14 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/13 21:04:55 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 00:18:45 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Cat : public Animal
 		Cat& operator=(const Cat& other);
 		virtual ~Cat();
 
+		Brain& gainBrain() const;
 		void makeSound() const;
 
 };
