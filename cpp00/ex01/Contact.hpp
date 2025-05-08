@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 15:45:13 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/02 02:00:14 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 16:11:08 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,4 @@ class Contact
 /*public: can be accessed from outside the class 
 private: can only be accessed by the class itself
 */
-
 #endif
