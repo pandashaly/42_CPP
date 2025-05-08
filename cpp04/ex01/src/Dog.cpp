@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 12:37:19 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/08 00:31:37 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 13:16:56 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Dog::Dog(void)
 
 Dog::Dog(const Dog & other) : Animal(other)
 {
-	this->_brain = new Brain(other.gainBrain());
+	this->_brain = new Brain(*other.getBrain());
 	this->_type = other._type;
 	std::cout << "Dog copied!" << std::endl;
 }
@@ -38,7 +38,9 @@ Dog & Dog::operator = (const Dog & other)
 	if (this != &other)
 	{
 		this->_type = other._type;
-		this->_brain = new Brain(other.gainBrain()); //deep copy contents
+		if (this->_brain)
+			delete this->_brain;
+		this->_brain = new Brain(*other.getBrain()); //deep copy contents
 	}
 	std::cout << "Dog assigned 🐶" << std::endl;
 	return *this;
@@ -49,7 +51,7 @@ void Dog::makeSound() const
 	std::cout << "Woof woof 🐾" << std::endl;
 }
 
-Brain& Dog::gainBrain() const
+Brain* Dog::getBrain() const
 {
-	return (*(this->_brain));
+	return this->_brain;
 }

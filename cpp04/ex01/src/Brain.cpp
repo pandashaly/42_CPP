@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 14:50:13 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/08 00:33:06 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 13:26:41 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ Brain & Brain::operator = (const Brain & other)
 		for (int i = 0; i < BRAINCAP; i++)
 			this->ideas[i] = other.ideas[i];
 	}
-	std::cout << "Brain copy assignment constructor called" << std::endl;
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 12:37:12 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/08 00:32:10 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 12:13:42 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cat::Cat(void)
 
 Cat::Cat(const Cat & other) : Animal(other)
 {
-	this->_brain = new Brain(other.gainBrain()); //deep copy
+	this->_brain = new Brain(*other.getBrain()); //deep copy
 	this->_type = other._type;
 	std::cout << "Cat copied!" << std::endl;
 }
@@ -38,7 +38,7 @@ Cat & Cat::operator = (const Cat & other)
 	if (this != &other)
 	{
 		this->_type = other._type;
-		this->_brain = new Brain(other.gainBrain()); //deep copy contents
+		this->_brain = new Brain(*other.getBrain()); //deep copy contents
 	}
 	std::cout << "Cat assigned 😸" << std::endl;
 	return *this;
@@ -49,7 +49,7 @@ void Cat::makeSound() const
 	std::cout << "Meow Meow 🐾" << std::endl;
 }
 
-Brain& Cat::gainBrain() const
+Brain* Cat::getBrain() const
 {
-	return (*(this->_brain));
+	return this->_brain;
 }
