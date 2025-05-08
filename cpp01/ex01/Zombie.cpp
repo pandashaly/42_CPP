@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 01:29:06 by ssottori          #+#    #+#             */
-/*   Updated: 2024/12/04 12:59:07 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 16:59:19 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,5 @@ void    Zombie::set_name(std::string name)
     this->_name = name;
     return ;
 }
+
 
