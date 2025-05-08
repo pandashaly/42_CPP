@@ -6,16 +6,15 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 12:29:30 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/08 15:48:45 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 16:07:20 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "AAnimal.hpp"
+#include "DogCat.hpp"
 #include "Brain.hpp"
 
-void	printIdeas(const Animal* animal, const std::string& petname)
+void	printIdeas(const AAnimal* animal, const std::string& petname)
 {
 	std::cout << std::endl;
 	std::cout << animal->getType() << " '" << petname << "' has an idea:" << std::endl;
@@ -46,37 +45,22 @@ int main()
 {
 	{
 		std::cout << "From PDF" << std::endl;
-		const Animal* k = new Animal(); //testing if the class can be instatiated and is not abstract
-		const Animal* j = new Dog();
-		const Animal* i = new Cat();
+		//const AAnimal* k = new AAnimal(); //testing if the class can be instatiated and is not abstract (wont work for ex02)
+		const AAnimal* j = new Dog(); //allocating Dog using pointer to abstract base class
+		const AAnimal* i = new Cat();
 
-		std::cout << k->getType() << " " << std::endl;
+		//std::cout << k->getType() << " " << std::endl;
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
-		k->makeSound();
+		//k->makeSound();
 		j->makeSound();
 		i->makeSound(); //will meow
 
-		delete k;
+		//delete k;
 		delete j;
 		delete i;
 		std::cout << "===============================" << std::endl;
 	}
-
-	std::cout << "\033[36m" << "[ Deep Copy Test - From Subject ]" << "\033[0m" << std::endl;
-
-	Dog basic;
-	basic.getBrain()->addIdea("I like bones.", 0);
-
-	{
-		Dog tmp = basic;  // copy constructor is called here
-		tmp.getBrain()->addIdea("I hate baths.", 1);
-		std::cout << "TMP ideas:" << std::endl;
-		printIdeas(&tmp, "TmpDog");
-	} // tmp is destroyed here
-
-	std::cout << "BASIC ideas (should not include tmp's idea):" << std::endl;
-	printIdeas(&basic, "BasicDog");
 	
 	{
 		std::cout << "\033[33m" << "Brain Testing - Looking for Ideas and my last 2 braincells"<< "\033[0m" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 12:29:40 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/13 14:03:54 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 13:36:00 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Animal::Animal(void) : _type("Panda🐼")
 
 Animal::Animal(const Animal & other) 
 {
-	std::cout << "Animal copied!" << std::endl;
 	*this = other;
 }
 

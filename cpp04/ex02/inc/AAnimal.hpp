@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/13 12:29:49 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/08 14:06:51 by ssottori         ###   ########.fr       */
+/*   Created: 2025/04/13 15:04:33 by ssottori          #+#    #+#             */
+/*   Updated: 2025/05/08 16:07:52 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 # include <iostream>
 
-class Animal
+class AAnimal
 {
-	public:
-		Animal();
-		Animal(std::string type);
-		Animal(const Animal& other);
-		Animal& operator=(const Animal& other);
-		virtual ~Animal();
-
-		virtual void makeSound() const; //only neeeds to be virtual in the parent class
-		std::string getType() const;
-
 	protected:
 		std::string _type;
+
+	public:
+		AAnimal();
+		AAnimal(std::string type);
+		AAnimal(const AAnimal &other);
+		AAnimal &operator=(const AAnimal &other);
+		virtual ~AAnimal();
+
+		virtual void	makeSound() const = 0;
+		std::string		getType() const;
 
 };
 

@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 13:03:27 by ssottori          #+#    #+#              #
-#    Updated: 2025/05/07 12:48:58 by ssottori         ###   ########.fr        #
+#    Updated: 2025/05/08 15:59:03 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,55 +60,3 @@ re: fclean all
 
 leaks:
 	valgrind --leak-check=full ./$(NAME)
-
-
-# # ==============COLORS=================
-# MAKEFLAGS += --silent
-# RED=\033[1;31m
-# GREEN=\033[1;32m
-# NC=\033[0m
-
-# # ===============FLAGS=================
-# CC = c++
-# FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
-# RM = rm -rf
-# NAME = ex01
-
-# INC = inc
-# IFLAGS = -I$(INC)
-
-# # ================SRCS=================
-# SRCS = main.cpp \
-# 		Animal.cpp \
-# 		Brain.cpp \
-# 		Animal.cpp \
-# 		Dog.cpp \
-# 		Cat.cpp \
-# 		WrongAnimal.cpp \
-# 		WrongCat.cpp \
-
-# OBJS = $(SRCS:.cpp=.o)
-
-# # ===============BUILD==================
-# all: $(NAME)
-
-# $(NAME): $(OBJS)
-# 			$(CC) $(FLAGS) $(OBJS) $(IFLAGS) -o $(NAME)
-# 	@echo "[$(GREEN)EX01$(NC)] - $<"
-
-# %.o: %.c
-# 	echo "[$(GREEN)EX01$(NC)] - $<"
-# 	$(CC) $(FLAGS) $(IFLAGS) -c $< -o $@
-
-# # ===============CLEAN==================
-# clean:
-# 	@echo "[$(RED)EX01$(NC)] Cleaning object files..."
-# 			@$(RM) $(OBJS)
-
-# fclean: clean
-# 	@echo "[$(RED)EX01$(NC)] Cleaning executable file..."
-# 			@$(RM) $(NAME)
-
-# re: fclean all
-
-# .PHONY: all clean fclean re

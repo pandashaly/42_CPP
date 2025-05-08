@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 14:06:39 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/13 14:20:37 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 13:38:19 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ WrongAnimal::WrongAnimal(void) : _type("Panda🐼")
 
 WrongAnimal::WrongAnimal(const WrongAnimal & other) 
 {
-	std::cout << "WrongAnimal copied!" << std::endl;
 	*this = other;
 }
 
@@ -40,7 +39,7 @@ WrongAnimal & WrongAnimal::operator = (const WrongAnimal & other)
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << "Guten Tag!" << std::endl;
+	std::cout << "Ribbit!" << std::endl;
 }
 
 std::string WrongAnimal::getType() const

@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 12:29:49 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/08 12:09:07 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 14:57:07 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ class Animal
 
 		virtual void makeSound() const;
 		std::string getType() const;
-		virtual Brain* getBrain() const = 0;
-		
+
 	protected:
 		std::string _type;
 

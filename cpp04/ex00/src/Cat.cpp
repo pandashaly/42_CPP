@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 12:37:12 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/13 14:05:24 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 13:36:21 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Cat::Cat(void)
 
 Cat::Cat(const Cat & other) : Animal(other)
 {
-	std::cout << "Cat copied!" << std::endl;
 	*this = other;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 14:06:43 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/13 14:34:58 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 13:46:18 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 //OCF
 WrongCat::WrongCat(void)
 {
-	_type = "Cat🐱";
+	_type = "Wrong Cat🐱";
 	std::cout << "WrongCat created!" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat & other) : WrongAnimal(other)
 {
-	std::cout << "WrongCat copied!" << std::endl;
 	*this = other;
 }
 
@@ -39,5 +38,5 @@ WrongCat & WrongCat::operator = (const WrongCat & other)
 
 void WrongCat::makeSound() const
 {
-	std::cout << "Meow Meow 🐾" << std::endl;
+	std::cout << "Wrong Meow Meow 🐾" << std::endl;
 }

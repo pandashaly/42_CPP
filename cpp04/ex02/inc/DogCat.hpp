@@ -1,30 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   DogCat.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/13 12:35:22 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/08 13:33:32 by ssottori         ###   ########.fr       */
+/*   Created: 2025/05/08 14:29:46 by ssottori          #+#    #+#             */
+/*   Updated: 2025/05/08 15:17:43 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef DOGCAT_HPP
+# define DOGCAT_HPP
 
 # include <iostream>
-# include "Animal.hpp"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
+	private:
+		Brain* _brain;
 	public:
 		Dog();
 		Dog(const Dog& other);
 		Dog& operator=(const Dog& other);
 		virtual ~Dog();
 
-		void makeSound() const; //still vertual even though we dont specify it. 
+		Brain* getBrain() const;
+		void makeSound() const;
+};
+
+class Cat : public AAnimal
+{
+	private:
+		Brain* _brain;
+	public:
+		Cat();
+		Cat(const Cat& other);
+		Cat& operator=(const Cat& other);
+		virtual ~Cat();
+
+		Brain* getBrain() const;
+		void makeSound() const;
+
 };
 
 #endif

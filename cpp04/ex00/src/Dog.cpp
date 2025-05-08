@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 12:37:19 by ssottori          #+#    #+#             */
-/*   Updated: 2025/04/13 14:04:38 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/08 13:36:39 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Dog::Dog(void)
 
 Dog::Dog(const Dog & other) : Animal(other)
 {
-	std::cout << "Dog copied!" << std::endl;
 	*this = other;
 }
 
