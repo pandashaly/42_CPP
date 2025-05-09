@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/08 17:01:28 by ssottori          #+#    #+#              #
-#    Updated: 2025/05/10 00:15:06 by ssottori         ###   ########.fr        #
+#    Updated: 2025/05/10 00:05:13 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 RM = rm -rf
 
 # ============== FILES ====================
-NAME = ex02
+NAME = ex03
 SRC_DIR = src
 INC_DIR = inc
 
@@ -33,6 +33,7 @@ SRCS = main.cpp \
 		$(SRC_DIR)/ShrubberyCreationForm.cpp \
 		$(SRC_DIR)/RobotomyRequestForm.cpp \
 		$(SRC_DIR)/PresidentialPardonForm.cpp \
+		$(SRC_DIR)/Intern.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -41,21 +42,20 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -I$(INC_DIR) -o $(NAME)
-	@echo "[$(GREEN)EX02$(NC)] Build complete!"
+	@echo "[$(GREEN)EX03$(NC)] Build complete!"
 
 %.o: %.cpp
-	@echo "[$(GREEN)EX02$(NC)] Compiling...$<"
+	@echo "[$(GREEN)EX03$(NC)] Compiling...$<"
 	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 # ============== CLEAN ====================
 clean:
-	@echo "[$(RED)EX02$(NC)] Object files..."
+	@echo "[$(RED)EX03$(NC)] Object files..."
 	@$(RM) $(OBJS)
 
 fclean: clean
-	@echo "[$(RED)EX02$(NC)] Executable..."
+	@echo "[$(RED)EX03$(NC)] Executable..."
 	@$(RM) $(NAME)
-	@rm -f *_shrubbery
 
 re: fclean all
 
