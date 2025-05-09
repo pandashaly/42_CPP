@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 23:24:31 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/08 23:39:28 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/09 16:08:50 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,31 @@
 class Bureaucrat
 {
 	public:
-	Bureaucrat();
-	Bureaucrat(const std::string& name, int grade);
-	Bureaucrat(const Bureaucrat& other);
-	Bureaucrat& operator=(const Bureaucrat& other);
-	~Bureaucrat();
+		Bureaucrat();
+		Bureaucrat(const std::string& name, int grade); //custom constructor to initilize _name n _grde
+		Bureaucrat(const Bureaucrat& other);
+		Bureaucrat& operator=(const Bureaucrat& other);
+		~Bureaucrat();
 
-	std::string getName() const;
-	int getGrade() const;
-	void incrementGrade();
-	void decrementGrade();
+		std::string getName() const;
+		int getGrade() const;
+		void incrementGrade();
+		void decrementGrade();
 
-	class GTHExeption : public std::exception
-	{
-		public:
-			const char* what() const throw();
-	};
-	class GTLExeption : public std::exception
-	{
-		public:
-			const char* what() const throw();
-	};
+		class GTHExeption : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		class GTLExeption : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 
 	private:
-	const std::string _name;
-	int _grade;
+		const std::string _name;
+		int _grade;
 };
 
 // External overload
