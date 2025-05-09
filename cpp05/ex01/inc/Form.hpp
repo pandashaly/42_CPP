@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 16:15:53 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/09 16:52:44 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/09 17:34:44 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ class Form
 		int getGradeToExec() const;
 		void beSigned(const Bureaucrat& Bureaucrat);
 
-		class GTHExeption : public std::exception
+		class GTHException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
 		};
-		class GTLExeption : public std::exception
+		class GTLException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
@@ -49,8 +49,8 @@ class Form
 	private:
 		const std::string _name;
 		bool _signed;
-		const int _gradeToExec;
 		const int _gradeToSign;
+		const int _gradeToExec;
 };
 
 std::ostream& operator<<(std::ostream& os, const Form& f);

@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 23:24:31 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/09 16:35:51 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/09 17:30:14 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ class Bureaucrat
 		void decrementGrade();
 		void signForm(Form& form);
 
-		class GTHExeption : public std::exception
+		class GTHException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
 		};
-		class GTLExeption : public std::exception
+		class GTLException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();

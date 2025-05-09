@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/08 17:01:28 by ssottori          #+#    #+#              #
-#    Updated: 2025/05/09 16:39:50 by ssottori         ###   ########.fr        #
+#    Updated: 2025/05/09 17:31:01 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,8 @@ SRC_DIR = src
 INC_DIR = inc
 
 SRCS = main.cpp \
-		Bureaucrat.cpp \
-		Form.cpp \
+		$(SRC_DIR)/Bureaucrat.cpp \
+		$(SRC_DIR)/Form.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
