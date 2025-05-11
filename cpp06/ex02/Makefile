@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/10 09:59:32 by ssottori          #+#    #+#              #
-#    Updated: 2025/05/10 09:59:39 by ssottori         ###   ########.fr        #
+#    Updated: 2025/05/11 15:23:45 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 RM = rm -rf
 
 # ============== FILES ====================
-NAME = ex00
+NAME = ex02
 SRC_DIR = src
 INC_DIR = inc
 
@@ -35,19 +35,19 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -I$(INC_DIR) -o $(NAME)
-	@echo "[$(GREEN)EX00$(NC)] Build complete!"
+	@echo "[$(GREEN)EX02$(NC)] Build complete!"
 
 %.o: %.cpp
-	@echo "[$(GREEN)EX00$(NC)] Compiling...$<"
+	@echo "[$(GREEN)EX02$(NC)] Compiling...$<"
 	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 # ============== CLEAN ====================
 clean:
-	@echo "[$(RED)EX00$(NC)] Object files..."
+	@echo "[$(RED)EX02$(NC)] Object files..."
 	@$(RM) $(OBJS)
 
 fclean: clean
-	@echo "[$(RED)EX00$(NC)] Executable..."
+	@echo "[$(RED)EX02$(NC)] Executable..."
 	@$(RM) $(NAME)
 
 re: fclean all

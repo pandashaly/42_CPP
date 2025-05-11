@@ -6,12 +6,12 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 23:41:32 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/09 19:20:24 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/11 18:11:10 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Beau"), _grade(150)
 {
