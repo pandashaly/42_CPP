@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 00:05:37 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/10 00:37:53 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/11 14:27:51 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ class Intern
 			public:
 				virtual const char* what() const throw();
 		};
-
 };
 
 #endif
