@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 15:32:16 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/11 17:42:15 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/05/11 19:42:53 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Span
 {
 	private:
 		unsigned int _N;
+		std::vector<int> _V;
 		
 	public:
 		Span();
@@ -33,10 +34,19 @@ class Span
 		void addNumber(int num);
 		int shortestSpan();
 		int longestSpan();
-		void addNumber();
+		void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+		//void addManyNumbers()
 
 		//exceptions
-		
+		class SpanFullException : public std::exception {
+			public:
+				const char*  what() const throw() { return "Span is already full"; }
+		};
+
+		class NotEnoughNumsException : public std::exception {
+			public:
+				const char* what() const throw() { return "Not enought numbers. No span can be found."; }
+		};
 };
 
 //type of vector cant be changed after its been declared
