@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/11 22:13:22 by ssottori          #+#    #+#              #
-#    Updated: 2025/05/11 22:32:26 by ssottori         ###   ########.fr        #
+#    Updated: 2025/06/18 01:47:06 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ GREEN=\033[1;32m
 NC=\033[0m
 
 # ============== COMPILER/FLAGS ============
-CC = c++
+CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 RM = rm -rf
 

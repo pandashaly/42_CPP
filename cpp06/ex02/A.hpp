@@ -6,7 +6,15 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 09:59:23 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/10 10:00:58 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/07/18 18:46:51 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
+# include "Base.hpp"
+
+class A : public Base
+{
+	
+};

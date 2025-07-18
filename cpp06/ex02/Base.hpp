@@ -6,16 +6,14 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 09:59:55 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/10 10:00:46 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/07/18 18:52:59 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
-
+#pragma once 
 #include <iostream>
-
 class Base
 {
-    
-}
+	public:
+		virtual ~Base();
+};

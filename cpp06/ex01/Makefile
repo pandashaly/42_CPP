@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/10 09:59:32 by ssottori          #+#    #+#              #
-#    Updated: 2025/07/18 18:55:59 by ssottori         ###   ########.fr        #
+#    Created: 2025/07/18 19:02:04 by ssottori          #+#    #+#              #
+#    Updated: 2025/07/18 19:04:38 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,12 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 RM = rm -rf
 
 # ============== FILES ====================
-NAME = ex02
+NAME = ex01
 SRC_DIR = src
 INC_DIR = inc
 
 SRCS = main.cpp \
-		Base.cpp \
+		Serializer.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -36,19 +36,19 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -I$(INC_DIR) -o $(NAME)
-	@echo "[$(GREEN)EX02$(NC)] Build complete!"
+	@echo "[$(GREEN)EX01$(NC)] Build complete!"
 
 %.o: %.cpp
-	@echo "[$(GREEN)EX02$(NC)] Compiling...$<"
+	@echo "[$(GREEN)EX01$(NC)] Compiling...$<"
 	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 # ============== CLEAN ====================
 clean:
-	@echo "[$(RED)EX02$(NC)] Object files..."
+	@echo "[$(RED)EX01$(NC)] Object files..."
 	@$(RM) $(OBJS)
 
 fclean: clean
-	@echo "[$(RED)EX02$(NC)] Executable..."
+	@echo "[$(RED)EX01$(NC)] Executable..."
 	@$(RM) $(NAME)
 
 re: fclean all
