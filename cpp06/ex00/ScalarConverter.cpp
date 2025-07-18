@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 22:30:04 by ssottori          #+#    #+#             */
-/*   Updated: 2025/07/18 19:52:48 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/07/18 20:07:13 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,8 @@ bool ScalarConverter::parseInput(const std::string& input, e_type type, char& c,
 			}
 
 			case FLOAT: {
-				std::istringstream iss(input);
+				std::string cleaned = input.substr(0, input.length() - 1); // remove trailing 'f'
+				std::istringstream iss(cleaned);
 				iss >> f;
 				if (iss.fail() || !iss.eof())
 					return false;
