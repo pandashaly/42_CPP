@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 22:13:52 by ssottori          #+#    #+#             */
-/*   Updated: 2025/06/18 01:51:28 by ssottori         ###   ########.fr       */
+/*   Updated: 2025/07/19 21:02:29 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ class ScalarConverter
 e_type	isType(const std::string& str);
 
 // float f = 42; // int to float
+//done
 // char c = static_cast<char>(97); // int to char
 
 //Except for char parameters, only the decimal notation will be used.
