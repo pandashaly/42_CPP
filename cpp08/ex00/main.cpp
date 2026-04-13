@@ -26,6 +26,13 @@ int main()
 	vec.push_back(20);
 	vec.push_back(30);
 
+	//std::cout << "---- Container -----"<< std::endl;
+	for (std::vector<int>::const_iterator iter = vec.begin(); iter != vec.end(); iter++)
+	{
+		std::cout << *iter << std::endl;
+	}
+	std::cout << "---- ----- -----"<< std::endl;
+
 	//found
 	try {
 		std::vector<int>::const_iterator it = easyfind(vec, 20);
@@ -40,6 +47,7 @@ int main()
 	} catch (const std::exception& e) {
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 //-----
 	std::cout << std::endl;
 	std::cout << "---- testing list -----"<< std::endl;
@@ -48,7 +56,12 @@ int main()
 	lst.push_back(15);
 	lst.push_back(25);
 
-	//for (int index = lst.begin(); index != lst.end() index++;)
+	//std::cout << "---- Container -----"<< std::endl;
+	for (std::list<int>::const_iterator iter = lst.begin(); iter != lst.end(); iter++)
+	{
+		std::cout << *iter << std::endl;
+	}
+	std::cout << "---- ----- -----"<< std::endl;
 
 	//found
 	try {
@@ -61,17 +74,24 @@ int main()
 	//not found
 	try {
 		std::list<int>::const_iterator it = easyfind(lst, 100);
-		std::cout << "Found in vector: " << *it << std::endl;
+		std::cout << "Found in list: " << *it << std::endl;
 	} catch (const std::exception& e) {
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 //-----
 	std::cout << std::endl;
 	std::cout << "---- testing queue -----"<< std::endl;
-	std::deque<int> que; //2linkedlist
+	std::deque<int> que; //double ended queue
 	que.push_back(5);
 	que.push_back(35);
 	que.push_back(25);
+
+	for (std::deque<int>::const_iterator iter = que.begin(); iter != que.end(); iter++)
+	{
+		std::cout << *iter << std::endl;
+	}
+	std::cout << "---- ----- -----"<< std::endl;
 
 	//found
 	try {
@@ -88,6 +108,7 @@ int main()
 	} catch (const std::exception& e) {
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 
 	return 0;
 }
