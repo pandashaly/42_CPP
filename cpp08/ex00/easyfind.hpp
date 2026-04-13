@@ -12,19 +12,34 @@
 
 #pragma once
 #include <string>
-#include <algorithm>
+#include <algorithm> //find - returns an iter to the 1st match, or the end iter if nothing is found. 
 #include <vector>
 #include <list>
 #include <iostream>
 #include <deque>
+#include <sstream>
 
 //this function has to find the first occurrence
 //of the second parameter in the first parameter.
 
-class NotFoundExeption : public std::exception
+//function templates r cool, they r like blueprints for functions!
+
+class NotFoundException : public std::exception
 {
+	private:
+		std::string msg;
 	public:
-		virtual const char* what() const throw() { return "Value not found in container :( "; }
+		NotFoundException(int value)
+		{
+			std::ostringstream oss;
+			oss << "Value " << value << " not found in container";
+			msg = oss.str();
+		}
+		virtual const char* what() const throw() 
+		{
+			return msg.c_str();
+		}
+		virtual ~NotFoundException() throw() {}
 };
 
 template <typename T>
@@ -32,6 +47,6 @@ typename T::const_iterator easyfind(const T& container, int n)
 {
 	typename T::const_iterator i = std::find(container.begin(), container.end(), n);
 	if (i == container.end())
-	throw NotFoundExeption();
+		throw NotFoundException(n);
 	return (i);
 }

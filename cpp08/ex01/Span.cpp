@@ -37,6 +37,7 @@ void Span::addNumber(int num)
 		throw Span::SpanFullException();
 	_V.push_back(num);
 }
+
 int Span::shortestSpan()
 int Span::longestSpan()
 void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
