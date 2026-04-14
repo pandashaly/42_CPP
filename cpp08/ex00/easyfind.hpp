@@ -24,29 +24,15 @@
 
 //function templates r cool, they r like blueprints for functions!
 
-class NotFoundException : public std::exception
-{
-	private:
-		std::string msg;
-	public:
-		NotFoundException(int value)
-		{
-			std::ostringstream oss;
-			oss << "Value " << value << " not found in container";
-			msg = oss.str();
-		}
-		virtual const char* what() const throw() 
-		{
-			return msg.c_str();
-		}
-		virtual ~NotFoundException() throw() {}
-};
-
 template <typename T>
 typename T::const_iterator easyfind(const T& container, int n)
 {
 	typename T::const_iterator i = std::find(container.begin(), container.end(), n);
 	if (i == container.end())
-		throw NotFoundException(n);
+	{
+		std::ostringstream oss;
+		oss << "No occurance found for value: : " << n;
+		throw std::logic_error(oss.str());
+	}
 	return (i);
 }

@@ -96,7 +96,7 @@ int main()
 	//found
 	try {
 		std::deque<int>::const_iterator it = easyfind(que, 35); // returns an iterator(a ptr) to the element 35
-		std::cout << "Found in list: " << *it << std::endl;
+		std::cout << "Found in deque: " << *it << std::endl;
 	} catch (const std::exception& e) {
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
@@ -104,7 +104,7 @@ int main()
 	//not found
 	try {
 		std::deque<int>::const_iterator it = easyfind(que, 22);
-		std::cout << "Found in vector: " << *it << std::endl;
+		std::cout << "Found in deque: " << *it << std::endl;
 	} catch (const std::exception& e) {
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
