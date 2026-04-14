@@ -46,6 +46,7 @@ int Span::shortestSpan()
 	std::vector<int> tmp = _data;
 	std::sort(tmp.begin(), tmp.end());
 	int shawty = tmp[1] - tmp[0];
+	//could also use STL algorithm std::adjacent_difference
 	for (std::vector<int>::size_type i = 1; i < tmp.size() - 1; ++i)
 	{
 		int diff = tmp[i + 1] - tmp[i];

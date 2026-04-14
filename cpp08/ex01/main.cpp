@@ -62,6 +62,23 @@ int main()
 	}
 	std::cout << "-------------------------" << std::endl;
 
+	//full span (should throw)
+		try {
+		Span fullsp = Span(3);
+		fullsp.addNumber(1);
+		fullsp.addNumber(2);
+		fullsp.addNumber(3);
+		fullsp.addNumber(4);
+		std::cout << fullsp.shortestSpan() << std::endl;
+		std::cout << fullsp.longestSpan() << std::endl;
+		std::cout << "-------------------------" << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << "-------------------------" << std::endl;
+
 	return 0;
 }
 
