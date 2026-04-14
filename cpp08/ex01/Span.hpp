@@ -20,8 +20,8 @@
 class Span
 {
 	private:
-		unsigned int _N;
-		std::vector<int> _V;
+		unsigned int _ms;
+		std::vector<int> _data;
 		
 	public:
 		Span();
@@ -34,20 +34,21 @@ class Span
 		void addNumber(int num);
 		int shortestSpan();
 		int longestSpan();
-		void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-		//void addManyNumbers()
+		void addManyNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
 		//exceptions
 		class SpanFullException : public std::exception {
 			public:
-				const char*  what() const throw() { return "Span is already full"; }
+				const char*  what() const throw();
 		};
+		//{ return "Span is already full"; }
 
 		class NotEnoughNumsException : public std::exception {
 			public:
-				const char* what() const throw() { return "Not enought numbers. No span can be found."; }
+				const char* what() const throw();
 		};
 };
+//{ return "Not enought numbers. No span can be found."; }
 
 //type of vector cant be changed after its been declared
 //vector<type> vectorName
