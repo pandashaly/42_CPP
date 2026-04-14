@@ -14,35 +14,59 @@
 
 int main()
 {
-	MutantStack<int> mstack;
+	//subject main
+	MutantStack<int> mutant;
+	mutant.push(5);
+	mutant.push(17);
 
-	mstack.push(5);
-	mstack.push(17);
+	std::cout << mutant.top() << std::endl;
 
-	std::cout << mstack.top() << std::endl;
+	mutant.pop();
+	std::cout << mutant.size() << std::endl;
 
-	mstack.pop();
+	mutant.push(3);
+	mutant.push(5);
+	mutant.push(737);
+	mutant.push(0);
 
-	std::cout << mstack.size() << std::endl;
+	MutantStack<int>::iter it = mutant.begin();
+	MutantStack<int>::iter end = mutant.end();
 
-	mstack.push(3);
-	mstack.push(5);
-	mstack.push(737);
-	//[...]
-	mstack.push(0);
-
-	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
-	
 	++it;
 	--it;
-
-	while (it != ite)
+	while (it != end)
 	{
 		std::cout << *it << std::endl;
 		++it;
 	}
-	std::stack<int> s(mstack);
-	
+	std::stack<int> normalStack(mutant);
+	std::cout << "-------------------------" << std::endl;
+
+	//my extra tests
+	//compare with list
+	std::list<int> mutantTwin;
+	mutantTwin.push_back(5);
+	mutantTwin.push_back(17);
+
+	std::cout << mutantTwin.back() << std::endl;
+	mutantTwin.pop_back();
+	std::cout << mutantTwin.size() << std::endl;
+
+	mutantTwin.push_back(3);
+	mutantTwin.push_back(5);
+	mutantTwin.push_back(737);
+	mutantTwin.push_back(0);
+
+	std::list<int>::iterator listIt = mutantTwin.begin();
+	std::list<int>::iterator listEnd = mutantTwin.end();
+
+	++listIt;
+	--listIt;
+	while (listIt != listEnd)
+	{
+		std::cout << *listIt << std::endl;
+		++listIt;
+	}
+
 	return 0;
 }
