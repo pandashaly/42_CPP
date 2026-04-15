@@ -6,13 +6,14 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 15:32:16 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/11 19:42:53 by ssottori         ###   ########.fr       */
+/*   Updated: 2026/04/15 11:36:50 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <algorithm>
 #include <string>
 #include <vector> //resizable array
 
