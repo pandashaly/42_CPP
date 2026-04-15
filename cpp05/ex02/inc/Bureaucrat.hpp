@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 23:24:31 by ssottori          #+#    #+#             */
-/*   Updated: 2025/05/09 23:36:49 by ssottori         ###   ########.fr       */
+/*   Updated: 2026/04/15 11:49:03 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,4 @@ class Bureaucrat
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
 
 #endif
+
