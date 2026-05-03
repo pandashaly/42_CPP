@@ -1,0 +1,21 @@
+Makefile - main.cpp - BitcoinExchange.cpp
+
+program that outputs the value of a certain amount
+ of bitcoin on a certain date
+
+
+program name btc
+
+ get date (YMD)
+ get value (+0-1000) float
+
+parse csv
+
+iterate thru the csv
+search for specific date - check neighboring column
+
+need error messages - 
+"incorrect date format "
+"no valid input - must be in '.csv' formatt"
+
+
