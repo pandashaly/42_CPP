@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 23:07:06 by ssottori          #+#    #+#             */
-/*   Updated: 2026/05/04 21:02:03 by ssottori         ###   ########.fr       */
+/*   Updated: 2026/05/04 21:03:02 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ Container	PmergeMe::sortContainer(Container input)
 			i++;
 		}
 	}
+	// TODO: maybe optimize this later?
 	result = mainChain;
 	order = jacobOrder(lilBro.size()); // generate jacobsthal insertion order
 	i = 0;
@@ -140,6 +141,7 @@ Container	PmergeMe::sortContainer(Container input)
 		result.insert(result.begin() + pos, loner);
 	}
 	return (result);
+	//DO NOT TOUCH THIIISS!!! IT WORKS
 }
 
 // binary search onlyyyyy up to bound not the whole array

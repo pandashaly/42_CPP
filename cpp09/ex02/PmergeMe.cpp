@@ -150,12 +150,39 @@ std::vector<int>	PmergeMe::jacobOrder(int size)
 
 //sorting
 
-std::vector<int>    PmergeMe::sortVector(std::vector<int> input)
-{
-    return sortContainer(input);
-}
+std::vector<int>    PmergeMe::sortVector(std::vector<int> input) { return sortContainer(input); }
+std::deque<int>     PmergeMe::sortDeque(std::deque<int> input) { return sortContainer(input); }
 
-std::deque<int>     PmergeMe::sortDeque(std::deque<int> input)
-{
-	return sortContainer(input);
-}
+
+// notessss
+// ---thought process (ex02)
+
+// - split input into pairs thennn-> compare 2 by 2
+// - keep bigger as "main", smaller as "pending" (lilBro and BigBro)
+// - sort only the bigger ones first (recursive)
+//   → bc if big is placed, small MUST go somewhere before it
+
+// - after sorting → mainChain = sorted big elements
+// - pending = all the smaller ones
+
+// - then insert pending back into mainChain
+//   → use binary search (faster than linear)
+//   → BUT only search up to its matching big element
+//     (no point going further)
+
+// - jacobsthal order → controls insertion order
+//   → supposed to reduce number of comparisons
+//   → honestly kinda confusing at first but it works
+
+// - handle odd number case (loner element at the end)
+
+// - same algo for vector + deque
+//   → just templated it so i dont rewrite everything
+//   → then compare execution time
+
+// - overall: divide → sort main → insert smartly
+
+// struggled with:
+// - mapping pairs back after sorting
+// - jacobsthal order indexing ????
+// - binary search boundaries (kept breaking lol)
