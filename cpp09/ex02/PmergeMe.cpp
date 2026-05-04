@@ -331,14 +331,15 @@ void	PmergeMe::run()
 	start = std::clock();
 	sortedVector = sortVector(_vector);
 	end = std::clock();
-	timeVector = static_cast<double>(end - start) * 1000000.0 / CLOCKS_PER_SEC;
+	timeVector = static_cast<double>(end - start) * 1000.0 / CLOCKS_PER_SEC;
 	start = std::clock();
 	sortedDeque = sortDeque(_deque);
 	end = std::clock();
-	timeDeque = static_cast<double>(end - start) * 1000000.0 / CLOCKS_PER_SEC;
+	timeDeque = static_cast<double>(end - start) * 1000.0 / CLOCKS_PER_SEC;
 	printSequence("After: ",sortedVector);
+	std::cout << std::fixed << std::setprecision(3);
 	std::cout << "Time to process a range of " << _vector.size()
-		<< " elements with std::vector : " << timeVector << " us" << std::endl;
+		<< " elements with std::vector : " << timeVector << " ms" << std::endl;
 	std::cout << "Time to process a range of " << _deque.size()
-		<< " elements with std::deque : " << timeDeque << " us" << std::endl;
+		<< " elements with std::deque : " << timeDeque << " ms" << std::endl;
 }

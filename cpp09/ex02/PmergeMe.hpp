@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 23:07:06 by ssottori          #+#    #+#             */
-/*   Updated: 2026/05/04 19:02:47 by ssottori         ###   ########.fr       */
+/*   Updated: 2026/05/04 19:22:08 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <deque>
 # include <string>
 # include <cstdlib>
+# include <iomanip>
 # include <climits>
 # include <ctime>
 # include <algorithm>
