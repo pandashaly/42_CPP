@@ -10,11 +10,12 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 RM = rm -rf
 
 # ============== FILES ====================
-NAME = ex00
+NAME = btc
 SRC_DIR = src
 INC_DIR = inc
 
 SRCS = main.cpp \
+	BitcoinExchange.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

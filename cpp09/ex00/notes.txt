@@ -11,7 +11,7 @@ program name btc
 
 parse csv
 
-iterate thru the csv
+iterate thru the csv / std::map
 search for specific date - check neighboring column
 
 need error messages - 
@@ -19,3 +19,25 @@ need error messages -
 "no valid input - must be in '.csv' formatt"
 
 
+💬 What you must be able to explain in defense
+Expect these questions:
+❓ Why std::map? -> sorted keys, effecient lookup, lower_bound for closest lower date
+❓ How do you find closest lower date? -> lower_bound OR step back if no exact match
+❓ Why not vector?
+Answer:
+vector requires full scan
+no automatic ordering
+inefficient for lookup
+
+
+"Why did you use std::map?"
+Because I need to look up a Bitcoin price by date, and std::map keeps its entries sorted by key automatically. That sorting is what lets me use lower_bound to find the closest earlier date efficiently — I couldn't do that with an unsorted container.
+
+"Why not std::vector?"
+A vector isn't sorted, so finding the closest date would mean scanning every element one by one. I'd have to sort it myself and write my own search. std::map gives me sorted storage and efficient lookup built in — it's the right tool for a key-value lookup problem.
+
+"Why a std::string as the key and not something like an integer or a struct?"
+Because the dates are formatted as YYYY-MM-DD, and that format has a useful property: alphabetical order and chronological order are the same thing. "2011-01-03" comes before "2011-01-09" both alphabetically and on a calendar. So I can use string comparison directly — no need to parse the date into numbers just to compare it. The map sorts strings lexicographically, and that gives me chronological order for free.
+
+"Why not std::multimap?"
+Because each date in the database has exactly one price. There are no duplicate dates, so I don't need a container that allows multiple values per key.
