@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 23:07:06 by ssottori          #+#    #+#             */
-/*   Updated: 2026/05/04 19:22:08 by ssottori         ###   ########.fr       */
+/*   Updated: 2026/05/04 20:55:38 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,126 @@ class PmergeMe
 		std::deque<int>		sortDeque(std::deque<int> input);
 		std::vector<int>	jacobOrder(int size);
 		int					jacobsthal(int n);
-		int		binarySearchVector(std::vector<int> &chain,int value,int end);
-		int		binarySearchDeque(std::deque<int> &chain,int value,int end);
+		// int		binarySearchVector(std::vector<int> &chain,int value,int end);
+		// int		binarySearchDeque(std::deque<int> &chain,int value,int end);
 		bool	isValidNumber(const std::string &str);
 		void	printSequence(const std::string &label,const std::vector<int> &seq);
+		
+		template <typename Container>
+		Container	sortContainer(Container input);
+
+		template <typename Container>
+		int		binarySearch(const Container& container, int val, int bound);
 };
+
+//----------------------
+//Template implementations
+template <typename Container>
+Container	PmergeMe::sortContainer(Container input)
+{
+	std::vector<std::pair<int, int> >	pairs;
+	Container							mainChain;
+	Container							lilBro; //smaller of each pair
+	Container							bigBro; //tracks which mainchain element each lilBro belongs to
+	Container							result;
+	std::vector<int>					order;
+	std::pair<int, int>					current;
+	int									loner;
+	bool								hasLoner;
+	size_t								i;
+	size_t								j;
+	int									pos;
+	int									boundary;
+
+	if (input.size() <= 1)
+		return (input);
+	hasLoner = false;
+	loner = 0;
+	i = 0;
+	//creating pairs with biggest elements
+	while (i + 1 < input.size())
+	{
+		if (input[i] > input[i + 1])
+			pairs.push_back(std::make_pair(input[i], input[i + 1]));
+		else
+			pairs.push_back(std::make_pair(input[i + 1], input[i]));
+		i += 2;
+	}
+	//odd number of elemnts?
+	if (i < input.size())
+	{
+		hasLoner = true;
+		loner = input[i];
+	}
+	i = 0;
+	while (i < pairs.size())
+	{
+		mainChain.push_back(pairs[i].first);
+		i++;
+	}
+	//sort recursivleyyyy until size <= 1
+	mainChain = sortContainer(mainChain);
+	if (!pairs.empty()) //matching each pair to where its bigger element ended up
+	{
+		i = 0;
+		while (i < mainChain.size())
+		{
+			j = 0;
+			while (j < pairs.size())
+			{
+				if (pairs[j].first == mainChain[i])
+				{
+					lilBro.push_back(pairs[j].second);
+					bigBro.push_back(pairs[j].first);
+					pairs.erase(pairs.begin() + j);
+					break;
+				}
+				j++;
+			}
+			i++;
+		}
+	}
+	result = mainChain;
+	order = jacobOrder(lilBro.size());
+	i = 0;
+	// insert lilBro elements in jacobsthal order
+	while (i < order.size())
+	{
+		current = std::make_pair(lilBro[order[i]], bigBro[order[i]]);
+		// boundary = position of its bigBro in result, no point searching past it
+		boundary = 0;
+		while (boundary < static_cast<int>(result.size()) && result[boundary] != current.second)
+			boundary++;
+		pos = binarySearch(result, current.first, boundary);
+		result.insert(result.begin() + pos, current.first);
+		i++;
+	}
+	if (hasLoner) //Loner goes last
+	{
+		pos = binarySearch(result, loner, result.size());
+		result.insert(result.begin() + pos, loner);
+	}
+	return (result);
+}
+
+// binary search onlyyyyy up to bound not the whole array
+template <typename Container>
+int	PmergeMe::binarySearch(const Container &container, int val, int limit)
+{
+	int	left;
+	int	right;
+	int	mid;
+
+	left = 0;
+	right = limit;
+	while (left < right)
+	{
+		mid = left + (right - left) / 2;
+		if (container[mid] < val)
+			left = mid + 1;
+		else
+			right = mid;
+	}
+	return (left);
+}
+
