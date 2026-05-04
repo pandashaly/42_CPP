@@ -10,11 +10,12 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 RM = rm -rf
 
 # ============== FILES ====================
-NAME = ex02
+NAME = PmergeMe
 SRC_DIR = src
 INC_DIR = inc
 
 SRCS = main.cpp \
+	PmergeMe.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
