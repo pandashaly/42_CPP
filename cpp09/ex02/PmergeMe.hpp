@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 23:07:06 by ssottori          #+#    #+#             */
-/*   Updated: 2026/05/04 20:55:38 by ssottori         ###   ########.fr       */
+/*   Updated: 2026/05/04 21:02:03 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,10 @@ Container	PmergeMe::sortContainer(Container input)
 		i += 2;
 	}
 	//odd number of elemnts?
-	if (i < input.size())
+	if (i < input.size()) 
 	{
 		hasLoner = true;
-		loner = input[i];
+		loner = input[i]; //remember loner for later - we input loners last
 	}
 	i = 0;
 	while (i < pairs.size())
@@ -120,7 +120,7 @@ Container	PmergeMe::sortContainer(Container input)
 		}
 	}
 	result = mainChain;
-	order = jacobOrder(lilBro.size());
+	order = jacobOrder(lilBro.size()); // generate jacobsthal insertion order
 	i = 0;
 	// insert lilBro elements in jacobsthal order
 	while (i < order.size())
@@ -155,11 +155,13 @@ int	PmergeMe::binarySearch(const Container &container, int val, int limit)
 	while (left < right)
 	{
 		mid = left + (right - left) / 2;
+		// std::cout << "mid: " << mid << std::endl;
 		if (container[mid] < val)
 			left = mid + 1;
 		else
 			right = mid;
 	}
+	// ??? infinite loop whyyyyy???
 	return (left);
 }
 
