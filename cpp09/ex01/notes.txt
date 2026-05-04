@@ -1,0 +1,22 @@
+You use a stack. 
+Think of a stack like a pile of plates — you can only add or remove from the top.
+
+The rule is simple:
+Read each token left to right
+If it's a number → push it onto the stack
+If it's an operator → pop the top two numbers,
+apply the operator, push the result back
+
+Let's trace 3 4 + 2 * by hand:
+Read 3   → stack: [3]
+Read 4   → stack: [3, 4]
+Read +   → pop 4 and 3, compute 3+4=7, push 7 → stack: [7]
+Read 2   → stack: [7, 2]
+Read *   → pop 2 and 7, compute 7*2=14, push 14 → stack: [14]
+Done     → result is 14
+
+Why std::stack?
+std::stack is a container adaptor built for exactly this...
+last in, first out. It only gives you push, pop, and top. 
+That constraint matches the algorithm perfectly. 
+You never need random access to the middle of the data.

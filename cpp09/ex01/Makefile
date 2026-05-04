@@ -6,7 +6,7 @@
 #    By: ssottori <ssottori@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/14 23:03:12 by ssottori          #+#    #+#              #
-#    Updated: 2026/04/14 23:03:32 by ssottori         ###   ########.fr        #
+#    Updated: 2026/05/04 15:28:55 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,12 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 RM = rm -rf
 
 # ============== FILES ====================
-NAME = ex01
+NAME = RPN
 SRC_DIR = src
 INC_DIR = inc
 
 SRCS = main.cpp \
+	RPN.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
